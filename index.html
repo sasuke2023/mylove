@@ -18,7 +18,6 @@
     .rangoli{position:fixed;bottom:-118px;left:50%;width:270px;height:270px;transform:translateX(-50%);opacity:.94;z-index:0;filter:drop-shadow(0 -7px 26px #f5b4451c);pointer-events:none;transition:filter .6s,opacity .6s}.rangoli svg{width:100%;height:100%}.stage[data-step="4"] .rangoli,.stage[data-step="5"] .rangoli{filter:drop-shadow(0 -12px 40px #f4be50a0);opacity:1}
     .progress{position:fixed;z-index:4;top:22px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:8px}.progress i{display:block;width:6px;height:6px;border-radius:50%;background:#fff3e33d;transition:all .3s}.progress i.active{width:21px;border-radius:9px;background:linear-gradient(90deg,#f1bd65,#ef8e45)}
     .music-player{position:fixed;z-index:5;top:14px;right:17px;display:flex;align-items:center;gap:10px;padding:7px 13px 7px 7px;border:1px solid #e4c07b42;border-radius:999px;background:#211426c9;backdrop-filter:blur(12px);box-shadow:0 6px 22px #10091155}.music-toggle{width:34px;height:34px;display:grid;place-items:center;border:0;border-radius:50%;background:linear-gradient(135deg,#ffc45c,#ee883a);color:#482a25;font-size:.86rem;cursor:pointer}.music-toggle:hover{filter:brightness(1.1);transform:scale(1.04)}.music-copy{text-align:left;line-height:1.25}.music-copy strong{display:block;color:#f9e8d5;font-size:.7rem;font-weight:600}.music-copy span{display:block;color:#cbb8c6;font-size:.62rem;margin-top:2px}.music-status{width:36px;color:#efc86c;font-size:.59rem;font-variant-numeric:tabular-nums;text-align:right}
-    .song-video{position:fixed;z-index:7;top:63px;right:17px;width:min(340px,calc(100vw - 28px));aspect-ratio:16/9;border:1px solid #e6c3826b;border-radius:13px;overflow:hidden;background:#100b13;box-shadow:0 18px 50px #08040ba6}.song-video iframe{display:block;width:100%;height:100%;border:0}
     .memory-wrap{position:relative;perspective:900px;margin:0 auto 18px;width:min(78vw,280px);height:min(92vw,360px);min-height:270px;max-height:360px}.polaroid{position:absolute;inset:0;padding:12px 12px 48px;background:#f8f1e8;border-radius:4px;box-shadow:0 25px 64px #08030c66;transform:rotate(-3deg);animation:cardIn .65s cubic-bezier(.16,.8,.25,1) both}.polaroid:nth-child(2){transform:rotate(4deg) scale(.97);z-index:-1;background:#eee1d8}@keyframes cardIn{from{opacity:0;transform:translateY(20px) rotate(-8deg) scale(.93)}to{opacity:1;transform:translateY(0) rotate(-3deg) scale(1)}}.photo-area{height:100%;width:100%;position:relative;overflow:hidden;background:linear-gradient(145deg,#a88a82,#443347 54%,#17262d);display:grid;place-items:center}.photo-area img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}.photo-placeholder{font:italic 1.4rem/1.35 var(--serif);color:#fff2da;text-shadow:0 2px 14px #140b18;text-align:center;padding:20px}.photo-placeholder small{display:block;font:600 .63rem var(--sans);letter-spacing:.12em;text-transform:uppercase;margin-top:10px;color:#fff1d8b0}.photo-caption{position:absolute;bottom:15px;left:12px;right:12px;color:#514048;font:italic 500 1rem var(--serif);text-align:center}.upload{display:inline-flex;align-items:center;gap:7px;color:#ead4df;font-size:.76rem;cursor:pointer;margin-top:14px}.upload input{display:none}.memory-meta{font:italic .98rem var(--serif);color:#e6cbd8;margin:0 0 14px}.memory-actions{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}.memory-actions button{border:0;border-radius:999px;padding:10px 17px;cursor:pointer;font-weight:700;color:#462b24;background:linear-gradient(135deg,#ffc45c,#ee883a)}.memory-actions .secondary{color:#ead9e3;border:1px solid #e6c38266;background:#ffffff0b;font-weight:500}.end-diya{width:135px;margin:0 auto 12px;filter:drop-shadow(0 0 24px #ffc75a66)}.end-diya svg{width:100%}.final-line{font:600 clamp(1.4rem,5vw,2.15rem)/1.35 var(--serif);color:#f3c15d;margin:6px auto 10px}.signature{font:600 .72rem var(--sans);letter-spacing:.13em;text-transform:uppercase;color:#e6d5db;margin:13px auto 20px}.sparkle{display:inline-block;animation:spark 1.6s ease-in-out infinite alternate}@keyframes spark{to{transform:rotate(18deg) scale(1.15)}}.burst{position:absolute;top:20%;left:14%;width:120px;height:120px;pointer-events:none;opacity:.57}.burst.right{left:auto;right:12%;top:15%;transform:scale(.7);opacity:.35}.burst path{stroke:#f4cf9c;stroke-width:1;stroke-dasharray:1 9;stroke-linecap:round;animation:burstPulse 2.5s ease-out infinite}@keyframes burstPulse{50%{opacity:.16;transform:scale(.72);transform-origin:center}}
     @media(max-width:600px){.music-player{top:auto;bottom:14px;right:13px;gap:8px;padding-right:10px}.music-copy strong{font-size:.65rem}.music-copy span{font-size:.57rem}.music-status{width:30px}.progress{top:19px;left:18px;transform:none}.stage{padding-top:64px}}
     @media(max-width:480px){.stage{padding-bottom:76px}.diya-scene{height:238px;transform:scale(.9);margin-top:-5px}.rangoli{width:235px;height:235px;bottom:-106px}.lantern-wrap{height:185px}.heart-wrap{height:158px}.burst{left:4%;top:19%;transform:scale(.72)}.burst.right{right:2%;top:15%}.small{font-size:.79rem}}
@@ -35,19 +34,18 @@
 <aside class="music-player" aria-label="Background music controls">
   <button class="music-toggle" id="musicToggle" type="button" aria-label="Play song" title="Play song">▶</button>
   <div class="music-copy"><strong>Channa Ve</strong><span>Bhoot · Part One</span></div>
-  <span class="music-status" id="musicStatus">Official video</span>
+  <span class="music-status" id="musicStatus">♫</span>
+  <audio id="song" preload="metadata" src="channa-ve.m4a"></audio>
 </aside>
-<div class="song-video" id="songVideo" hidden><iframe id="songFrame" title="Channa Ve official music video" allow="autoplay; encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 <input type="file" id="photoInput" accept="image/*" hidden />
 <script>
   const content = document.querySelector('#content');
   const stage = document.querySelector('#stage');
   const progress = document.querySelector('#progress');
   const photoInput = document.querySelector('#photoInput');
+  const song = document.querySelector('#song');
   const musicToggle = document.querySelector('#musicToggle');
   const musicStatus = document.querySelector('#musicStatus');
-  const songVideo = document.querySelector('#songVideo');
-  const songFrame = document.querySelector('#songFrame');
   let step = 0, lit = new Set([0,1,2,3,4]), memory = 0, uploaded = [];
   const memoryCaptions = ['You, glowing brighter than the diyas','A little moment, a lot of magic','A night to remember ✨','My favourite kind of forever'];
   const memoryImages = ['memory-1.jpg','memory-2.jpg','memory-3.jpg','memory-4.jpg'];
@@ -68,8 +66,12 @@
     content.querySelector('#uploadInline')?.addEventListener('change',e=>handleUpload(e.target.files?.[0]));
   }
   function handleUpload(file){if(!file)return;const reader=new FileReader();reader.onload=()=>{uploaded[memory]=reader.result;render()};reader.readAsDataURL(file)}
-  musicToggle.addEventListener('click',()=>{if(songVideo.hidden){songVideo.hidden=false;songFrame.src='https://www.youtube-nocookie.com/embed/se9DDAwwGQY?autoplay=1&playsinline=1&rel=0';musicToggle.textContent='Ⅱ';musicToggle.setAttribute('aria-label','Close song player');musicStatus.textContent='Now playing'}else{songFrame.src='';songVideo.hidden=true;musicToggle.textContent='▶';musicToggle.setAttribute('aria-label','Play Channa Ve');musicStatus.textContent='Official video'}});
+  musicToggle.addEventListener('click',async()=>{if(song.paused){try{await song.play()}catch{musicStatus.textContent='Tap again'}}else song.pause()});
+  song.addEventListener('play',()=>{musicToggle.textContent='Ⅱ';musicToggle.setAttribute('aria-label','Pause song');musicStatus.textContent='♫ Playing'});
+  song.addEventListener('pause',()=>{musicToggle.textContent='▶';musicToggle.setAttribute('aria-label','Play song');musicStatus.textContent='♫'});
+  song.addEventListener('ended',()=>{musicToggle.textContent='▶';musicToggle.setAttribute('aria-label','Play song');musicStatus.textContent='♫'});
   photoInput.addEventListener('change',e=>handleUpload(e.target.files?.[0]));render();
 </script>
 </body>
 </html>
+
